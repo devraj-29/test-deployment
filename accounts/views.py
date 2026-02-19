@@ -9,7 +9,7 @@ from .permissions import IsAdminRole, IsUserRole
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt  # Disable CSRF validation
-class LoginView(APIView):
+class LoginView(APIView):  # This should be a class-based view, not a function
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
