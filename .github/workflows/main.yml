@@ -50,10 +50,13 @@ jobs:
             # Apply migrations
             python manage.py migrate
 
-            # Collect static files (if applicable)
+            # Collect static files (optional)
             # python manage.py collectstatic --noinput
 
-            # Restart Gunicorn and Nginx using sudo without requiring interactive password
+            # Reload systemd to recognize the updated service
+            echo "${{ secrets.SERVER_PASSWORD }}" | sudo -S systemctl daemon-reload
+
+            # Restart Gunicorn and Nginx without requiring interactive password
             echo "${{ secrets.SERVER_PASSWORD }}" | sudo -S systemctl restart gunicorn
             echo "${{ secrets.SERVER_PASSWORD }}" | sudo -S systemctl restart nginx
           EOF
