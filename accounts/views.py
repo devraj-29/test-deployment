@@ -6,12 +6,12 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 from .serializers import LoginSerializer, UserSerializer
 from .permissions import IsAdminRole, IsUserRole
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt  # Import csrf_exempt
 
-@csrf_exempt  # Disable CSRF validation
 class LoginView(APIView):  # This should be a class-based view, not a function
     permission_classes = [permissions.AllowAny]
 
+    @csrf_exempt  # Disable CSRF validation for this view (optional, use only if needed)
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

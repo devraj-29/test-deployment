@@ -9,5 +9,3 @@ urlpatterns = [
     path('admin/stats/', AdminStatsView.as_view(), name='admin-stats'),
     path('user/summary/', UserSummaryView.as_view(), name='user-summary'),
 ]
-
-
