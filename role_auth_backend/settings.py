@@ -33,13 +33,14 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://your-domain.com',  # Add your production domain here
+    'https://your-production-domain.com',  # Add your production domain here
     'http://127.0.0.1:8000',  # If you're running locally
     'https://localhost',  # If you're running locally
-    'http://139.59.78.201',
+    'http://139.59.78.201',  # IP address for server access
 ]
 
-CSRF_COOKIE_SECURE = False  # Set this to True in production if using HTTPS
+CSRF_COOKIE_HTTPONLY = True  # Ensures CSRF cookies are set only via HTTP
+CSRF_COOKIE_SECURE = False  # Set to True in production if using HTTPS
 SESSION_COOKIE_SECURE = True  # Set this to True in production if using HTTPS
 
 # If you're using Django Rest Framework, add this for non-browser clients
