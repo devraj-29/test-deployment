@@ -38,7 +38,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://localhost',  # If you're running locally
 ]
 
-CSRF_COOKIE_SECURE = True  # Set this to True in production if using HTTPS
+CSRF_COOKIE_SECURE = False  # Set this to True in production if using HTTPS
 SESSION_COOKIE_SECURE = True  # Set this to True in production if using HTTPS
 
 # If you're using Django Rest Framework, add this for non-browser clients
