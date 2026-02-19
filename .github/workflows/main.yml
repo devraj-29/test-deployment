@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to Server using SSH with Password
         run: |
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /path/to/your/django/project
+            cd /var/www/role_auth_backend/test-deployment
             git pull origin main
             source venv/bin/activate
             pip install -r requirements.txt
