@@ -36,6 +36,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://your-domain.com',  # Add your production domain here
     'http://127.0.0.1:8000',  # If you're running locally
     'https://localhost',  # If you're running locally
+    "*"
 ]
 
 CSRF_COOKIE_SECURE = False  # Set this to True in production if using HTTPS
