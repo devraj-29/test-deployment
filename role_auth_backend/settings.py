@@ -32,6 +32,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://your-domain.com',  # Add your production domain here
+    'http://127.0.0.1:8000',  # If you're running locally
+    'https://localhost',  # If you're running locally
+]
+
+CSRF_COOKIE_SECURE = True  # Set this to True in production if using HTTPS
+SESSION_COOKIE_SECURE = True  # Set this to True in production if using HTTPS
+
+# If you're using Django Rest Framework, add this for non-browser clients
+CSRF_COOKIE_HTTPONLY = True  #
+
 ROOT_URLCONF = 'role_auth_backend.urls'
 
 TEMPLATES = [
